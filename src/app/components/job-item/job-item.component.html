@@ -1,0 +1,17 @@
+<div class="job-item">
+    <img [src]="job.companyLogo" width="50" />
+    <div class="job-spec">
+        <h3>
+            <a [routerLink]="['/job', job.id]" routerLinkActive="router-link-active">
+                {{ job.title }}
+            </a>
+        </h3>
+        <p>
+            Company: {{ job.companyName }} &nbsp;&nbsp; Reference:
+            {{ job.reference }}
+        </p>
+    </div>
+    <button (click)="toggleFavorite()">
+        <span class="icon-star" [class.active]="job.favorite"></span>
+    </button>
+</div>

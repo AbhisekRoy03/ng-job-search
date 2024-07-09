@@ -1,0 +1,26 @@
+<div *ngIf="job">
+    <button (click)="navigateToJobs()" class="back-button">
+        <img class="icon" src="./assets/icons/home.png" />
+        <span>Back</span>
+    </button>
+    <div class="job-details">
+        <img class="logo" [src]="job.companyLogo"/>
+        <div class="job-header">
+            <h2>{{ job.companyName }} - {{ job.title }}</h2>
+            <div class="tags">
+                <span class="tag" *ngFor="let type of job.types" [innerHTML]="type"></span>
+                <span class="tag" *ngFor="let industry of job.industries" [innerHTML]="industry"></span>
+            </div>
+        </div>
+    </div>
+    <p><b>Publish date:</b> {{ job.publishDate }}</p>
+    <p><b>Location:</b> {{ job.location }}</p>
+    <p><b>Reference:</b> {{ job.reference }}</p>
+    <p><b>Description:</b></p>
+    <p [innerHTML]="job.description"></p>
+    <ul>
+        <li *ngFor="let responsibility of job.responsibilities">
+            {{ responsibility }}
+        </li>
+    </ul>
+</div>
