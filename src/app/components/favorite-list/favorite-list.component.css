@@ -26,3 +26,7 @@ button {
     border: none;
     display: contents;
 }
+
+.no-favorites{
+    text-align: center;
+}
